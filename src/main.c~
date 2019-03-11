@@ -1,0 +1,35 @@
+#include "../inc/header.h"
+#include <stdio.h>
+#include "../libft/libft.h"
+
+int		main(void)
+{
+	char *buf;
+	char temp[10];
+	bool	read_rows;
+	char cols[10] = {};
+	char rows[10] = {};
+
+	if (get_next_line(1, &buf) >= 0)\
+		printf("%s", buf);
+	if (!buf)
+		return(0);
+	if (ft_strncmp("Plateau", buf, 7))
+		return (0);
+	i = 7;
+	while (buf[i])
+	{
+		if (ft_isdigit(buf[i]))
+		{
+			if (!read_rows)
+				rows++ = buf[i];
+			else
+				cols++ = buf[i];
+		}
+		else
+			read_rows = 1;
+		i++;
+	}
+	rows = ft_atoi(buf + 8);
+	return (0);
+}
